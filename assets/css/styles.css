@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Avenir Next";
+    src:url("../fonts/AvenirNext-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    src:url("../fonts/AvenirNext-Medium.ttf");
+}
+
+.navbar {
+  background-color: none !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Avenir Next", sans-serif !important;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
