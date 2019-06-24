@@ -1,3 +1,5 @@
+/* Globals */
+
 @font-face {
     font-family: "Avenir Next";
     src:url("../fonts/AvenirNext-Regular.ttf");
@@ -8,17 +10,359 @@
     src:url("../fonts/AvenirNext-Medium.ttf");
 }
 
+body {
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Avenir Next", sans-serif;
+}
+
+.container-fluid {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.btn.btn-primary {
+  background: #FFC961;
+  border-radius: 5px;
+  color: black;
+  border:none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input.form-control, input.form-control:focus {
+  background: #EEEEEE;
+  border-radius: 5px;
+  border: none;
+  height: calc(1.5em + .75rem + 8px);
+  outline: none;
+  box-shadow: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Navbar */
+
 .navbar {
-  background-color: none !important;
-  padding-top: 20px;
+  margin-top: 0px;
+  padding-top: 40px;
   padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
   font-family: "Avenir Next", sans-serif !important;
 }
 
-.navbar .nav-link {
+.navbar.navbar-light .nav-link {
   font-weight: 500;
   color: black;
   margin-left: 10px;
   margin-right: 10px;
   font-size: 1.1rem;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+  color: black;
+}
+
+.navbar-light .navbar-toggler .navbar-toggler-icon{
+  color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-brand img {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand img {
+    height: 35px;
+  }
+}
+
+/* Header */
+
+.header {
+  margin-top: 80px;
+  height: 600px;
+}
+
+
+.header-content {
+  width: 58%;
+  margin-right: 1%;
+  display: inline-block;
+  float: left;
+  margin-top: 50px;
+}
+
+.header-image {
+  width: 40%;
+  display: inline-block;
+  float: right;
+}
+
+.header-image img {
+  width: 100%;
+}
+
+.header .title {
+  font-weight: 600;
+}
+
+.header .subtitle {
+  font-size: 1.6rem;
+  width: 85%;
+  line-height: 123.8%;
+}
+
+.cta {
+  width: 65%;
+}
+
+.cta input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.section {
+  height: 600px;
+  position: relative;
+  background-image: linear-gradient(#FFFAEB, #FFFAEB);
+/*  padding-left: 100px;
+  padding-right: 100px;*/
+}
+
+.section-2 {
+  height: 700px;
+  position: relative;
+/*  padding-left: 100px;
+  padding-right: 100px;*/
+}
+
+.section-mask {
+  width:110%;
+  top:-5%;
+  left:-5%;
+  margin-bottom: -50px;
+  transform:rotate(-5deg);
+  height: 130px;
+  background-image: linear-gradient(#FFFAEB, #FFFAEB);
+}
+
+@media screen and (min-width: 1400px) {
+  .section-mask {
+    margin-bottom: -55px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .section-mask {
+    margin-bottom: -60px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .section {
+  }
+  .section-mask {
+    margin-bottom: -90px;
+    height: 300px;
+
+  }
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 35px;
+  padding-bottom: 70px;
+}
+
+.footer-right, .footer-left, .footer-logo, .copyright {
+  display: inline-block;
+}
+
+.footer-right {
+  float: right;
+}
+
+.footer-left {
+  float: left;
+  font-size: 1.4rem;
+}
+
+.footer-left i {
+  color: black;
+  margin-right: 10px;
+}
+
+.footer-logo img {
+  margin-top: -5px;
+  margin-right: 5px;
+} 
+
+
+/* Sections */
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.section .subtitle {
+  font-size: 1.48rem;
+}
+
+.section-content {
+  margin-top: 150px;
+  display: inline-block;
+  float: right;
+  width: 400px;
+  margin-left: 3%;  
+}
+
+.section-image {
+  margin-top: 50px;
+  width: 630px;
+  float: left;
+  display: inline-block;
+}
+
+.section-image img {
+  width: 100%;
+}
+
+.section-2 h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.section-2 .subtitle {
+  font-size: 1.48rem;
+}
+
+.section-2-content {
+  margin-top: 200px;
+  display: inline-block;
+  float: left;
+  width: 400px;
+}
+
+.section-2-image {
+  margin-top: 50px;
+  width: 630px;
+  float: right;
+  margin-left: 3%;  
+  display: inline-block;
+}
+
+.section-2-image img {
+  width: 100%;
+}
+
+/* Page Headers */
+.page-header {
+  padding-top: 70px;
+  text-align: center;
+  padding-bottom: 100px;
+  background: #FFFAEB;
+}
+
+.page-header .title {
+  margin-top: 25px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.page-header .subtitle {
+  font-size: 1.65rem;
+  width: 50%;
+  text-align: center;
+  transform: translate(50%, 0%);
+  line-height: 2rem;
+}
+
+.page-content {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+/* Team Page */
+.organizers, .advisors {
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.organizers h2, .advisors h2, .board h2 {
+  font-weight: 600;
+}
+
+.organizers .description, .advisors .description, .board .description {
+  margin-bottom: 25px;
+}
+.card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 320px;
+}
+
+.card-body, .card-footer {
+  text-align: center;
+  border: none;
+}
+
+.card-body img {
+  margin-bottom: 15px;
+  height: 100px;
+}
+
+.card-footer {
+  background: #FFFAEB;
+}
+
+.card-footer a {
+  color: black;
+  font-weight: bold;
+}
+
+.card-title.name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-text.grad {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.search-container {
+  position: relative;
+}
+
+.results-container {
+  margin-top: 50px;
+}
+
+.results-container .card {
+  margin-bottom: 25px;
+}
+
+/* Network Page */
+.fas.fa-search {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  color: grey;
+}
+
+.form-control.search, .form-control.search:focus  {
+  padding-left: 40px;
 }
