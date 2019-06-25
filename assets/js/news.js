@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     return `
       <div class="col-md-12">
-        <a href="#">
+        <a href="${newsData.Link}">
           <div class="card news-card">
             <h2 class="news-title">${newsData.Title}</h2>
             <p class="news-description">${newsData.Description}</p>
@@ -61,7 +61,7 @@ $(document).ready(() => {
 
   //Search data
   const search = (event) => {
-    let query = searchField.val();
+    let query = searchField.val().toLowerCase();
     results = [];
 
     if(!query || query === "") {
@@ -75,7 +75,7 @@ $(document).ready(() => {
         entries.forEach((entry) => {
           const val = entry[1];
 
-          if(val.toString().includes(query)) {
+          if(val.toString().toLowerCase().includes(query)) {
             found = true;
           }
         })

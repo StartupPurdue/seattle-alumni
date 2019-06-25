@@ -25,11 +25,12 @@ $(document).ready(() => {
   //Search data
   const search = (event) => {
     let results = [];
-    let query = searchField.val();
+    let query = searchField.val().toLowerCase();
 
     if(event.type === "click") {
       query = $(event.target).text();
       searchField.val(query);
+      query = query.toLowerCase();
     }
 
     if(!query || query === "") {
@@ -44,14 +45,14 @@ $(document).ready(() => {
           const val = entry[1];
 
           if(typeof val === "string"){
-            if(val.includes(query)) {
+            if(val.toLowerCase().includes(query)) {
               found = true;
             }
           }
 
           if(Array.isArray(val)) {
             val.forEach(tag => {
-              if(tag.toString().includes(query)) {
+              if(tag.toString().toLowerCase().includes(query)) {
                 found = true;
               }
             });

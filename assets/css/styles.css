@@ -10,7 +10,7 @@
     src:url("../fonts/AvenirNext-Medium.ttf");
 }
 
-body {
+body, .wrapper {
   overflow-x: hidden;
 }
 
@@ -19,9 +19,25 @@ body {
 }
 
 .container-fluid {
+  overflow-x: hidden;
   padding-left: 100px;
   padding-right: 100px;
 }
+
+@media screen and (max-width: 1200px) {
+  .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 
 
 .btn:focus,.btn:active {
@@ -95,6 +111,17 @@ input.form-control, input.form-control:focus {
   .navbar-brand img {
     height: 35px;
   }
+
+  .navbar.navbar-light .nav-link {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: #F3F3F3;
+    padding-left: 20px;
+  }
+
+
 }
 
 /* Header */
@@ -146,15 +173,101 @@ input.form-control, input.form-control:focus {
   height: 600px;
   position: relative;
   background-image: linear-gradient(#FFFAEB, #FFFAEB);
-/*  padding-left: 100px;
-  padding-right: 100px;*/
 }
 
 .section-2 {
   height: 700px;
   position: relative;
-/*  padding-left: 100px;
-  padding-right: 100px;*/
+}
+
+@media screen and (max-width: 1050px) {
+  .section-2 {
+    height: 600px;
+  }
+
+  .section {
+    height: 500px;
+  }
+
+  .header {
+    height: 400px;
+  }
+
+  .header .title {
+    font-size: 2.2rem;
+  }
+
+  .header .subtitle {
+    font-size: 1.3rem;
+    width: 85%;
+    line-height: 123.8%;
+  }
+
+  .cta .btn.btn-primary {
+    font-size: 0.8rem;
+  }
+
+  .cta input {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .section-2 {
+    height: 400px;
+    text-align: left;
+  }
+
+  .section {
+    height: 300px;
+    text-align: left;
+  }
+
+  .header {
+    margin-top: 30px;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  .header-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .section-2 {
+    height: 100%;
+    text-align: left;
+  }
+
+  .section {
+    height: 100%;
+    text-align: left;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  .header-content {
+    width: 100%;
+  }
+
+  .header .title {
+    font-size: 2rem;
+  }
+
+  .header .subtitle {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .cta {
+    width: 100%;
+  }
 }
 
 .section-mask {
@@ -180,12 +293,9 @@ input.form-control, input.form-control:focus {
 }
 
 @media screen and (min-width: 1800px) {
-  .section {
-  }
   .section-mask {
     margin-bottom: -90px;
     height: 300px;
-
   }
 }
 
@@ -193,7 +303,7 @@ input.form-control, input.form-control:focus {
 
 .footer {
   padding-top: 35px;
-  padding-bottom: 70px;
+  padding-bottom: 35px;
 }
 
 .footer-right, .footer-left, .footer-logo, .copyright {
@@ -218,6 +328,35 @@ input.form-control, input.form-control:focus {
   margin-top: -5px;
   margin-right: 5px;
 } 
+
+@media screen and (max-width: 570px) {
+  .footer {
+    text-align: center;
+    padding-bottom: 35px;
+  }
+
+  .footer-left {
+    display: block;
+    text-align: center;
+    clear: both;
+    float: none;
+  }
+
+  .footer-right{
+    display: block;
+    text-align: center;
+    clear: both;
+    float: none;
+  }
+
+  .footer-left i {
+    text-align: center;
+  }
+
+  .footer-logo img {
+    text-align: center;
+  } 
+}
 
 
 /* Sections */
@@ -249,6 +388,56 @@ input.form-control, input.form-control:focus {
   width: 100%;
 }
 
+@media screen and (max-width: 1270px) {
+  .section-image {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .section-image {
+    width: 400px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .section-image {
+    display: none;
+  }
+
+  .section-content {
+    margin-top: 60px;
+    float: none;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+
+  .section h2 {
+    font-size: 2.2rem;
+  }
+
+  .section .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .section-content {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+}
+
+
+
+
 .section-2 h2 {
   font-size: 2.5rem;
   font-weight: 600;
@@ -277,6 +466,54 @@ input.form-control, input.form-control:focus {
   width: 100%;
 }
 
+
+@media screen and (max-width: 1200px) {
+  .section-2-image {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .section-2-image {
+    width: 400px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .section-2-image {
+    display: none
+  }
+
+  .section-2-content {
+    margin-top: 150px;
+    float: none;
+    width: 100%;
+  }
+
+  .section-2 h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-2 .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .section-2-content {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    float: none;
+    width: 100%;
+  }
+
+  .section-2 h2 {
+    font-size: 2rem;
+  }
+}
+
+
 /* Page Headers */
 .page-header {
   padding-top: 70px;
@@ -304,6 +541,24 @@ input.form-control, input.form-control:focus {
   padding-bottom: 25px;
 }
 
+
+@media screen and (max-width: 570px) {
+  .page-header .page-image {
+    display: none;
+  }
+
+  .page-header .title {
+    font-size: 2.2rem;
+  }
+
+  .page-header .subtitle {
+    width: 90%;
+    transform: translate(5%, 0%);
+    font-size: 1.4rem;
+  }
+}
+
+
 /* Team Page */
 .organizers, .advisors {
   margin-top: 10px;
@@ -330,6 +585,8 @@ input.form-control, input.form-control:focus {
   margin-bottom: 25px;
 }
 
+
+
 /* Network Page */
 .fas.fa-search {
   position: absolute;
@@ -353,6 +610,7 @@ input.form-control, input.form-control:focus {
 .network-card, .event-card {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   min-height: 370px;
+  margin-bottom: 30px;
 }
 
 .network-card .card-body, .network-card .card-footer {
