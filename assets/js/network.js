@@ -3,6 +3,7 @@ $(document).ready(() => {
   const searchField = $("#search");
   const resultsContainer = $("#results");
 
+
   const startAirtable = () => {
     fetch('https://api.airtable.com/v0/app36kMpjAlitJKAE/Seattle', {
       method: "GET",
@@ -104,7 +105,7 @@ $(document).ready(() => {
 
     return `
       <div class="col-md-3" data-id="${id}">
-        <div class="card">
+        <div class="card network-card">
           <div class="card-body">
             <img class="rounded-circle" src="${imageUrl}" style="object-fit: cover; text-align: center" alt="Card image cap">
             <h5 class="card-title name">${userData.Name}</h5>
