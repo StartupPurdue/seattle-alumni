@@ -4,6 +4,10 @@ $(document).ready(() => {
   const resultsContainer = $("#results");
   let results = data;
 
+  /*****************************************************/
+  // Build news HTML
+  /*****************************************************/
+
   const buildNewsItem = (newsData) => {
     if(!newsData || newsData === "") return "";
 
@@ -23,9 +27,11 @@ $(document).ready(() => {
     `;
   }
 
-  const updateElements = () => {
-    console.log(results)
+  /*****************************************************/
+  // Update the news elemnents on screen 
+  /*****************************************************/
 
+  const updateElements = () => {
     $('#pagination').pagination({
         dataSource: results,
         pageSize: 5,
@@ -33,12 +39,16 @@ $(document).ready(() => {
           resultsContainer.html("");
 
           paginatedData.forEach(item => {
-            console.log(item)
             resultsContainer.prepend(buildNewsItem(item));
           })
         }
     })
   }
+
+  /*****************************************************/
+  // Connect to the external airtable
+  /*****************************************************/
+
 
   const startAirtable = () => {
     fetch('https://api.airtable.com/v0/appCXmPx3X0Gh8eS1/Seattle', {
@@ -59,7 +69,10 @@ $(document).ready(() => {
     });
   }
 
-  //Search data
+  /*****************************************************/
+  // Search the list for certain news items
+  /*****************************************************/
+
   const search = (event) => {
     let query = searchField.val().toLowerCase();
     results = [];
@@ -83,8 +96,6 @@ $(document).ready(() => {
         if(found) results.push(item);
       })
     }
-
-    console.log("Results", results)
 
     updateElements();
   }  

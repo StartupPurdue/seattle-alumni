@@ -3,7 +3,7 @@ $(document).ready(() => {
   const upcomingEvents = $("#upcoming-events");
   const pastEvents = $("#past-events");
 
-
+  //Connect to the Airtable and build elements
   const startAirtable = () => {
     fetch('https://api.airtable.com/v0/appLLGsgl0o7H5VN7/Seattle', {
       method: "GET",
@@ -31,7 +31,6 @@ $(document).ready(() => {
 
   // Build user HTML
   const buildEvent = (eventData) => {
-    console.log(eventData)
     let date = new Date(eventData.Date);
 
     const month = date.toLocaleString('en-us', { month: 'short' }).toUpperCase();

@@ -3,6 +3,9 @@ $(document).ready(() => {
   const searchField = $("#search");
   const resultsContainer = $("#results");
 
+  /*****************************************************/
+  // Connect to the airtable and build initial elements
+  /*****************************************************/
 
   const startAirtable = () => {
     fetch('https://api.airtable.com/v0/app36kMpjAlitJKAE/Seattle', {
@@ -22,17 +25,23 @@ $(document).ready(() => {
     });
   }
 
-  //Search data
+  /*****************************************************/
+  //Search the Airtable for individuals
+  /*****************************************************/
+
   const search = (event) => {
+    // Build results array and make sure query ignores case
     let results = [];
     let query = searchField.val().toLowerCase();
 
+    // If the user clicks a tag on an alumni, this event is triggered
     if(event.type === "click") {
       query = $(event.target).text();
       searchField.val(query);
       query = query.toLowerCase();
     }
 
+    // If the user types in the search bar, this event is triggered
     if(!query || query === "") {
       results = data;
       resultsContainer.children().each((index, child) => $(child).show());
@@ -41,6 +50,7 @@ $(document).ready(() => {
         const entries = Object.entries(item);
         let found = false;
 
+        // Iterate through all of the fields in each object to see if there is a match betwween the query and field data.
         entries.forEach((entry) => {
           const val = entry[1];
 
@@ -50,6 +60,7 @@ $(document).ready(() => {
             }
           }
 
+          // If a field is an array, like the tags, check the query on each item in the array
           if(Array.isArray(val)) {
             val.forEach(tag => {
               if(tag.toString().toLowerCase().includes(query)) {
@@ -62,13 +73,13 @@ $(document).ready(() => {
         if(found) results.push(index);
       })
 
+      // Show hide elements based on the airtable data and element id
       resultsContainer.children().each((index, child) => {
         let jChild = $(child);
 
         const id = jChild.data("id")
         if(results.includes(id)) {
           jChild.show();
-          console.log(id)
         } else {
           jChild.hide();
         }
@@ -76,7 +87,10 @@ $(document).ready(() => {
     }
   }
 
+  /*****************************************************/
   // Build user HTML
+  /*****************************************************/
+
   const buildUser = (id, userData) => {
     if(!userData || userData === "") return "";
 
@@ -120,10 +134,6 @@ $(document).ready(() => {
         </div>
       </div>
     `;
-  }
-
-  const buildNewsItem = () => {
-
   }
 
   startAirtable();
