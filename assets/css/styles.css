@@ -1,4 +1,6 @@
+/*****************************************/
 /* Globals */
+/*****************************************/
 
 @font-face {
     font-family: "Avenir Next";
@@ -39,7 +41,6 @@ body, .wrapper {
 }
 
 
-
 .btn:focus,.btn:active {
    outline: none !important;
    box-shadow: none;
@@ -73,7 +74,9 @@ input.form-control, input.form-control:focus {
   padding-right: 15px;
 }
 
+/*****************************************/
 /* Navbar */
+/*****************************************/
 
 .navbar {
   margin-top: 0px;
@@ -299,7 +302,9 @@ input.form-control, input.form-control:focus {
   }
 }
 
+/*****************************************/
 /* Footer */
+/*****************************************/
 
 .footer {
   padding-top: 35px;
@@ -359,7 +364,10 @@ input.form-control, input.form-control:focus {
 }
 
 
-/* Sections */
+/*****************************************/
+/* Home Page Sections */
+/*****************************************/
+
 .section h2 {
   font-size: 2.5rem;
   font-weight: 600;
@@ -514,7 +522,10 @@ input.form-control, input.form-control:focus {
 }
 
 
-/* Page Headers */
+/*****************************************/
+/* Specific Page Headers */
+/*****************************************/
+
 .page-header {
   padding-top: 70px;
   text-align: center;
@@ -559,7 +570,10 @@ input.form-control, input.form-control:focus {
 }
 
 
+/*****************************************/
 /* Team Page */
+/*****************************************/
+
 .organizers, .advisors {
   margin-top: 10px;
   margin-bottom: 100px;
@@ -587,7 +601,10 @@ input.form-control, input.form-control:focus {
 
 
 
+/*****************************************/
 /* Network Page */
+/*****************************************/
+
 .fas.fa-search {
   position: absolute;
   top: 14px;
@@ -642,7 +659,10 @@ input.form-control, input.form-control:focus {
   font-size: 0.9rem;
 }
 
+/*****************************************/
 /* News Page */
+/*****************************************/
+
 .news-card {
   padding: 30px 50px;
   border: none;
@@ -703,7 +723,9 @@ input.form-control, input.form-control:focus {
   font-style: italic;
 }
 
+/*****************************************/
 /* Events page */
+/*****************************************/
 
 .event-card .card-body, .event-card .card-footer {
   text-align: center;
