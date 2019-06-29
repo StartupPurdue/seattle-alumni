@@ -91,6 +91,36 @@ $(document).ready(() => {
   // Build user HTML
   /*****************************************************/
 
+  const buildSocialIcons = (userData) => {
+    let html = "";
+
+    if(userData.Email) {
+      html += `<a href="${userData.Email}"><i class="fas fa-envelope"></i></a>`
+    }
+
+    if(userData.Facebook) {
+      html += `<a href="${userData.Facebook}"><i class="fab fa-facebook-f"></i></a>`
+    }
+
+    if(userData.Linkedin) {
+      html += `<a href="${userData.Linkedin}"><i class="fab fa-linkedin"></i></a>`
+    }
+
+    if(userData.Twitter) {
+      html += `<a href="${userData.Twitter}"><i class="fab fa-twitter"></i></a>`
+    }
+
+    if(userData.Instagram) {
+      html += `<a href="${userData.Instagram}"><i class="fab fa-instagram"></i></a>`
+    }
+
+    if(userData["Personal Website"]) {
+      html += `<a href="${userData["Personal Website"]}"><i class="fas fa-globe"></i></a>`
+    }
+
+    return html;
+  }
+
   const buildUser = (id, userData) => {
     if(!userData || userData === "") return "";
 
@@ -98,6 +128,7 @@ $(document).ready(() => {
     let gradYear = "";
     let roleAndCompany = "";
     let badges = "";
+    let socialIcons = buildSocialIcons(userData);
 
     if(userData.Headshot && userData.Headshot[0]) {
       imageUrl = userData.Headshot[0].url;
@@ -116,7 +147,7 @@ $(document).ready(() => {
         return `<span class="badge badge-dark">${tag}</span>`;
       }).join(" ");
     }
-
+    //<a href="${userData.Linkedin || "javascript:void(0)"}" class="card-link text-center">Contact</a>
 
     return `
       <div class="col-md-3" data-id="${id}">
@@ -129,7 +160,7 @@ $(document).ready(() => {
             ${badges}
           </div>
           <div class="card-footer">
-            <a href="${userData.Linkedin || "javascript:void(0)"}" class="card-link text-center">Contact</a>
+            ${socialIcons}
           </div>
         </div>
       </div>

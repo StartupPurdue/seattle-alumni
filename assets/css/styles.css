@@ -640,6 +640,33 @@ input.form-control, input.form-control:focus {
   height: 100px;
 }
 
+.network-card .card-footer i {
+  margin-right: 7px;
+  margin-left: 7px;
+  font-size: 1.2rem;
+}
+
+i.fa-facebook-f {
+  color: #3b5998;
+}
+
+i.fa-twitter {
+  color: #38A1F3;
+}
+
+i.fa-linkedin {
+  color: #0077B5;
+}
+
+
+
+i.fa-instagram {
+    color: #C13584 ;    
+}
+
+
+
+
 .network-card .card-footer, .event-card .card-footer {
   background: #FFFAEB;
 }
