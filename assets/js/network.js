@@ -17,7 +17,7 @@ $(document).ready(() => {
     .then(res => res.json())
     .then(res => {
       if(res) {
-        data = res.records.map(record => record.fields).filter(record => record.Approved && record.Location.includes("Seattle Area"));
+        data = res.records.map(record => record.fields).filter(record => record.Approved && record.Location === "Seattle Area");
       }
 
       data.forEach((result, id) => resultsContainer.prepend(buildUser(id, result)));
