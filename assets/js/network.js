@@ -8,7 +8,7 @@ $(document).ready(() => {
   /*****************************************************/
 
   const startAirtable = () => {
-    fetch('https://api.airtable.com/v0/app36kMpjAlitJKAE/Seattle', {
+    fetch('https://api.airtable.com/v0/app36kMpjAlitJKAE/Master', {
       method: "GET",
       headers: {
         Authorization: "Bearer keywRTkDRGVoJpVNx"
@@ -17,7 +17,7 @@ $(document).ready(() => {
     .then(res => res.json())
     .then(res => {
       if(res) {
-        data = res.records.map(record => record.fields).filter(record => record.Approved);
+        data = res.records.map(record => record.fields).filter(record => record.Approved && record.Location.includes("Seattle Area"));
       }
 
       data.forEach((result, id) => resultsContainer.prepend(buildUser(id, result)));
