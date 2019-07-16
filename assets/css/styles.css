@@ -26,6 +26,7 @@ body, .wrapper {
   padding-right: 100px;
 }
 
+
 @media screen and (max-width: 1200px) {
   .container-fluid {
     padding-left: 50px;
@@ -120,7 +121,7 @@ input.form-control, input.form-control:focus {
     margin-right: 0px;
     margin-top: 10px;
     margin-bottom: 5px;
-    background: #F3F3F3;
+    background: white;
     padding-left: 20px;
   }
 
@@ -131,12 +132,20 @@ input.form-control, input.form-control:focus {
 
 .header {
   margin-top: 80px;
-  height: 600px;
+  height: 550px;
 }
 
 
+.top-header {
+  background: linear-gradient(
+                rgba(255, 255, 255, 0.8), 
+                rgba(255, 255, 255, 0.8)
+              ), url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg');
+  background-size: cover;
+}
+
 .header-content {
-  width: 58%;
+  width: 100%;
   margin-right: 1%;
   display: inline-block;
   float: left;
@@ -155,21 +164,23 @@ input.form-control, input.form-control:focus {
 
 .header .title {
   font-weight: 600;
+  font-size: 4rem;
 }
 
 .header .subtitle {
-  font-size: 1.6rem;
-  width: 85%;
+  font-size: 2rem;
+  /*width: 85%;*/
   line-height: 123.8%;
 }
 
 .cta {
-  width: 65%;
+  width: 40%;
 }
 
 .cta input {
   padding-top: 10px;
   padding-bottom: 10px;
+  background: white;
 }
 
 .section {
@@ -204,6 +215,10 @@ input.form-control, input.form-control:focus {
     font-size: 1.3rem;
     width: 85%;
     line-height: 123.8%;
+  }
+
+  .cta {
+    width: 55%;
   }
 
   .cta .btn.btn-primary {
