@@ -75,6 +75,10 @@ input.form-control, input.form-control:focus {
   padding-right: 15px;
 }
 
+.empty-state {
+  font-size: 2rem;
+}
+
 /*****************************************/
 /* Navbar */
 /*****************************************/

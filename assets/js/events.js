@@ -2,6 +2,7 @@ $(document).ready(() => {
   let data = [];
   const upcomingEvents = $("#upcoming-events");
   const pastEvents = $("#past-events");
+  const resultsContainer = $(".results-container")[0];
 
   //Connect to the Airtable and build elements
   const startAirtable = () => {
@@ -17,6 +18,8 @@ $(document).ready(() => {
         data = res.records.map(record => record.fields)
       }
 
+      let itemCount = 0;
+
       data.forEach(event => {       
         if(event.Name === null || event.Name === undefined) return;
 
@@ -25,7 +28,13 @@ $(document).ready(() => {
         } else {
           upcomingEvents.prepend(buildEvent(event));
         }
+
+        itemCount++;
       });
+
+      if(itemCount === 0) {
+        resultsContainer.innerHTML = `<div class="col-md-12"><p class="empty-state">Our organizers are working hard to create some awesome events! Join our mailing list for updates!</p></div>`;
+      }
     });
   }
 
